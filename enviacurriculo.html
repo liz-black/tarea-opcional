@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Currículum Vitae</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<form id="cvForm">
+
+<h1>CURRICULUM VITAE</h1>
+
+<!-- ================= DATOS PERSONALES ================= -->
+<div class="section">
+<h2>DATOS PERSONALES</h2>
+
+<div class="datos-grid">
+
+    <!-- IZQUIERDA -->
+    <div class="datos-left">
+
+        <label>Apellidos</label>
+        <input name="apellidos" required>
+
+        <label>Nombres</label>
+        <input name="nombres" required>
+
+        <label>DNI</label>
+        <input name="dni" pattern="[0-9]{8}" maxlength="8" required>
+
+        <label>Fecha de Nacimiento</label>
+        <input type="date" name="nacimiento">
+
+        <label>Lugar de Nacimiento</label>
+        <input name="lugar">
+
+        <label>Dirección</label>
+        <input name="direccion">
+
+        <label>Localidad</label>
+        <input name="localidad">
+
+        <label>Provincia</label>
+        <input name="provincia">
+
+        <label>Teléfono (opcional)</label>
+        <input name="telefono">
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+    </div>
+
+    <!-- DERECHA -->
+    <div class="datos-right">
+        <label>Foto (3x4)</label>
+        <input type="file" id="foto" accept="image/*">
+        <img id="preview" class="foto">
+    </div>
+
+</div>
+</div>
+
+<!-- ================= FORMACION ================= -->
+<div class="section">
+<h2>FORMACIÓN Y ESTUDIOS</h2>
+<div id="formaciones"></div>
+<button type="button" onclick="agregarFormacion()">+ Añadir estudios</button>
+</div>
+
+<!-- ================= EXPERIENCIA ================= -->
+<div class="section">
+<h2>EXPERIENCIA PROFESIONAL</h2>
+<div id="experiencias"></div>
+<button type="button" onclick="agregarExperiencia()">+ Añadir experiencia</button>
+</div>
+
+<!-- ================= COMPLEMENTARIOS ================= -->
+<div class="section">
+<h2>DATOS COMPLEMENTARIOS</h2>
+<textarea name="complementarios" rows="3"></textarea>
+</div>
+
+<br>
+<input type="submit" value="Enviar Currículum">
+
+</form>
+
+<!-- ================= RESULTADO ================= -->
+<div class="resultado" id="resultado">
+<h2>CURRÍCULUM REGISTRADO</h2>
+<img id="rFoto" class="foto derecha">
+<div id="datosMostrados"></div>
+
+<br>
+<button onclick="window.print()">Descargar PDF</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
